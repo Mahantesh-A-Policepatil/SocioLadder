@@ -1,3 +1,18 @@
+
+php artisan make:migration create_job_types_table
+php artisan make:migration create_proficiency_table
+
+php artisan make:migration create_experience_table
+php artisan make:migration create_skills_table
+
+php artisan make:model Proficiency
+php artisan make:model JobType
+php artisan make:model Experience
+php artisan make:model Skills
+
+php artisan make:controller ExperienceController --resource
+php artisan make:controller SkillController --resource
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
