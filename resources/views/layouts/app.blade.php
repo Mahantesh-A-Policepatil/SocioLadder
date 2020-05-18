@@ -18,6 +18,8 @@
 
 
 
+
+
     <!-- Mahantesh - Code Start -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
@@ -30,13 +32,27 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+       
+        .footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          height:20px;
+          background-color:#286090; border-color: #2e6da4;
+          color: white;
+          text-align: center;
+
+        }
+    </style>
 </head>
-<body>
+<body >
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm" style="background-color:#286090; color: white;">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ url('/') }}" style="color: white;">
+                    <!-- {{ config('app.name', 'Laravel') }} -->
+                    SocioLadder
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -53,16 +69,16 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" style="color: white;" >{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}" style="color: white;" >{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" style="color: white;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -90,6 +106,13 @@
         <main class="py-4">
             @yield('content')
         </main>
+         <footer class="footer">
+              <div class="container">
+                © Copyright 2020, All Rights Reserved
+              </div>
+         </footer>
+       
     </div>
+ 
 </body>
 </html>

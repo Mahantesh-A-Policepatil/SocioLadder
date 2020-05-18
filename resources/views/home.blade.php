@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card" style="border-color: #286090;">
+            <div class="card" style="border-color: #286090; margin-top:100px; ">
                 <div class="card-header" style="background-color:#286090; border-color: #2e6da4; color:white">Employee Dashboard</div>
 
                 <div class="card-body" style="font-size: 20px;">
