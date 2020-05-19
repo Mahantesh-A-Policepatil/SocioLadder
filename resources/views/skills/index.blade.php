@@ -41,20 +41,54 @@
                   <a href="{{ route('skills.edit',$row->id)}}" class="btn btn-primary">Edit</a>
                 </div>
 
-                <div style="float:left;margin-left:5px;">
+               <!--  <div style="float:left;margin-left:5px;">
                   <form action="{{ route('skills.destroy', $row->id)}}" method="post">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger" type="submit">Delete</button>
                   </form>
+                </div> -->
+                <div style="float:left; margin-left:5px;">
+                  <button type="button" class="btn btn-danger" data-id="{{$row->id}}" data-toggle="modal" data-target="#myModal">Delete</button>
                 </div>
+
               </div>
             </td>
         </tr>
         @endforeach
     </tbody>
   </table>
+  <div class="modal modal-danger fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-center">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form action="{{ route('skills.destroy', $row->id)}}" method="post">
+          @csrf
+          @method('DELETE')
+          <div class="modal-body">
+            <p class="text-center">Are you sure you want to delete this skill..??</p>
+            <input type="hidden" name="id" value="" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="dont-delete">No, Cancel</button>
+            <button type="submit" class="btn btn-danger" id="yes-delete">Yes, Delete</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   {{ $skills->links() }}
 </div>
 </div>
 @endsection
+@section('scripts')
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+@stop
