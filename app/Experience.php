@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Experience extends Model
 {
     //
+    use SoftDeletes;
+    
     protected $table = "experience";
 
     protected $fillable = [
